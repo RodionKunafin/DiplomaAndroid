@@ -68,8 +68,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void SignPin() {
         sPref = getSharedPreferences("PinPref", MODE_PRIVATE);
         String savedText = sPref.getString(SAVED_PIN, "");
-        inputPin.setText(savedText);
-        Toast.makeText(MainActivity.this, "Text loaded", Toast.LENGTH_SHORT).show();
+        if (inputPin.getText().toString().equals(savedText)) {
+            Intent in = new Intent(MainActivity.this, Notes.class);
+            startActivity(in);
+            Toast.makeText(MainActivity.this, "PIN is correct", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(MainActivity.this, "Incorrectly,try again", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
