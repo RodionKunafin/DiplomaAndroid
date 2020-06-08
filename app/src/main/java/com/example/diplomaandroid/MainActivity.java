@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(in);
             Toast.makeText(MainActivity.this, "PIN is correct", Toast.LENGTH_SHORT).show();
         } else {
+            inputPin.setText(null);
             Toast.makeText(MainActivity.this, "Incorrectly,try again", Toast.LENGTH_SHORT).show();
         }
     }
