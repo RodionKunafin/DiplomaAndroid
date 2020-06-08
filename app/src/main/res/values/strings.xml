@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">DiplomaAndroid</string>
     <string name="textPin">Enter Pin:</string>
-    <string name="btnSavePin">SavePin</string>
     <string name="btnSign">Sign in</string>
     <string name="inputPin">Enter PIN</string>
     <string name="tViewCreatePin">If this is your first time here,press "create PIN"</string>

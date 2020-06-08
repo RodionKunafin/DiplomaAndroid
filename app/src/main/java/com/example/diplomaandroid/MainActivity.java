@@ -14,10 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     final String SAVED_PIN = "saved_pin";
     EditText inputPin;
-    Button btnSavePin;
     Button btnSign;
     Button btnCreatePin;
-    //public static final String APP_PREFERENCES_PIN = "pin";
     SharedPreferences sPref;
 
 
@@ -27,8 +25,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         inputPin = findViewById(R.id.inputPin);
-        btnSavePin = findViewById(R.id.btnSavePin);
-        btnSavePin.setOnClickListener(this);
         btnSign = findViewById(R.id.btnSign);
         btnSign.setOnClickListener(this);
 
@@ -46,23 +42,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btnSavePin:
-                savePin();
-                break;
             case R.id.btnSign:
                 SignPin();
                 break;
             default:
                 break;
         }
-    }
-
-    private void savePin() {
-        sPref = getSharedPreferences("PinPref", MODE_PRIVATE);
-        SharedPreferences.Editor ed = sPref.edit();
-        ed.putString(SAVED_PIN, inputPin.getText().toString());
-        ed.apply();
-        Toast.makeText(MainActivity.this, "PIN saved", Toast.LENGTH_SHORT).show();
     }
 
     private void SignPin() {
