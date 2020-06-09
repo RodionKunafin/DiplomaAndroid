@@ -11,11 +11,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+public class PinCodeActivity extends AppCompatActivity implements View.OnClickListener {
     final String SAVED_PIN = "saved_pin";
     EditText inputPin;
     Button btnSign;
-    Button btnCreatePin;
     SharedPreferences sPref;
 
 
@@ -28,16 +28,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSign = findViewById(R.id.btnSign);
         btnSign.setOnClickListener(this);
 
-        btnCreatePin = findViewById(R.id.btnCreatePin);
-        btnCreatePin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CretePin.class);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+            if (sPref.getString(SAVED_PIN,"").length()!=0) {
+                Toast.makeText(PinCodeActivity.this, "ENTER PIN", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(PinCodeActivity.this, CretePin.class);
                 startActivity(intent);
             }
-        });
-        SignPin();
-    }
+        }
 
     @Override
     public void onClick(View v) {
@@ -54,12 +57,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sPref = getSharedPreferences("PinPref", MODE_PRIVATE);
         String savedText = sPref.getString(SAVED_PIN, "");
         if (inputPin.getText().toString().equals(savedText)) {
-            Intent in = new Intent(MainActivity.this, Notes.class);
+            Intent in = new Intent(PinCodeActivity.this, Notes.class);
             startActivity(in);
-            Toast.makeText(MainActivity.this, "PIN is correct", Toast.LENGTH_SHORT).show();
+            Toast.makeText(PinCodeActivity.this, "PIN is correct", Toast.LENGTH_SHORT).show();
         } else {
             inputPin.setText(null);
-            Toast.makeText(MainActivity.this, "Incorrectly,try again", Toast.LENGTH_SHORT).show();
+            Toast.makeText(PinCodeActivity.this, "Incorrectly,try again", Toast.LENGTH_SHORT).show();
         }
     }
 

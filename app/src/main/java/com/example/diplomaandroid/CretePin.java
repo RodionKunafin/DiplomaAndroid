@@ -41,7 +41,7 @@ public class CretePin extends AppCompatActivity {
         btnReturnToPin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CretePin.this, MainActivity.class);
+                Intent intent = new Intent(CretePin.this, PinCodeActivity.class);
                 startActivity(intent);
             }
         });
