@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CretePin extends AppCompatActivity {
+public class CreatePin extends AppCompatActivity {
     //final String SAVED_NEW_PIN = "saved_new_pin";
     final String SAVED_PIN = "saved_pin";
     EditText inputNewPin;
@@ -33,7 +33,7 @@ public class CretePin extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPrefCreatePin.edit();
                 editor.putString(SAVED_PIN, inputNewPin.getText().toString());
                 editor.apply();
-                Toast.makeText(CretePin.this, "PIN saved", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CreatePin.this, "PIN saved", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -41,7 +41,7 @@ public class CretePin extends AppCompatActivity {
         btnReturnToPin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CretePin.this, PinCodeActivity.class);
+                Intent intent = new Intent(CreatePin.this, PinCodeActivity.class);
                 startActivity(intent);
             }
         });

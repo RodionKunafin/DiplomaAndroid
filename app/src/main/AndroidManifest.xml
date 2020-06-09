@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CretePin"></activity>
+        <activity android:name=".CreatePin"></activity>
         <activity android:name=".Notes"></activity>
     </application>
 

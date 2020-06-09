@@ -27,11 +27,18 @@ public class PinCodeActivity extends AppCompatActivity implements View.OnClickLi
         inputPin = findViewById(R.id.inputPin);
         btnSign = findViewById(R.id.btnSign);
         btnSign.setOnClickListener(this);
+        sPref = getSharedPreferences("PinPref", MODE_PRIVATE);
 
-
+        if (sPref.getString(SAVED_PIN,"").length()>0) {
+            Toast.makeText(PinCodeActivity.this, "ENTER PIN", Toast.LENGTH_LONG).show();
+        } else {
+            Intent intent = new Intent(PinCodeActivity.this, CreatePin.class);
+            startActivity(intent);
+        }
     }
 
-    @Override
+
+    /*@Override
     protected void onResume() {
         super.onResume();
             if (sPref.getString(SAVED_PIN,"").length()!=0) {
@@ -40,7 +47,7 @@ public class PinCodeActivity extends AppCompatActivity implements View.OnClickLi
                 Intent intent = new Intent(PinCodeActivity.this, CretePin.class);
                 startActivity(intent);
             }
-        }
+        }*/
 
     @Override
     public void onClick(View v) {
@@ -54,7 +61,6 @@ public class PinCodeActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void SignPin() {
-        sPref = getSharedPreferences("PinPref", MODE_PRIVATE);
         String savedText = sPref.getString(SAVED_PIN, "");
         if (inputPin.getText().toString().equals(savedText)) {
             Intent in = new Intent(PinCodeActivity.this, Notes.class);
