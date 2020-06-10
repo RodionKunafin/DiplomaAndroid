@@ -10,4 +10,5 @@
     <string name="inputNewPin">Create new PIN here</string>
     <string name="btnReturnToPin">Return To Enter PIN</string>
     <string name="toolbarNotes">NOTES</string>
+    <string name="btnRemove">Удалить</string>
 </resources>

@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-
 public class PinCodeActivity extends AppCompatActivity implements View.OnClickListener {
     final String SAVED_PIN = "saved_pin";
     EditText inputPin;
@@ -29,25 +28,13 @@ public class PinCodeActivity extends AppCompatActivity implements View.OnClickLi
         btnSign.setOnClickListener(this);
         sPref = getSharedPreferences("PinPref", MODE_PRIVATE);
 
-        if (sPref.getString(SAVED_PIN,"").length()>0) {
+        if (sPref.getString(SAVED_PIN, "").length() > 0) {
             Toast.makeText(PinCodeActivity.this, "ENTER PIN", Toast.LENGTH_LONG).show();
         } else {
             Intent intent = new Intent(PinCodeActivity.this, CreatePin.class);
             startActivity(intent);
         }
     }
-
-
-    /*@Override
-    protected void onResume() {
-        super.onResume();
-            if (sPref.getString(SAVED_PIN,"").length()!=0) {
-                Toast.makeText(PinCodeActivity.this, "ENTER PIN", Toast.LENGTH_LONG).show();
-            } else {
-                Intent intent = new Intent(PinCodeActivity.this, CretePin.class);
-                startActivity(intent);
-            }
-        }*/
 
     @Override
     public void onClick(View v) {

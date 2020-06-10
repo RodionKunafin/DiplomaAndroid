@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CreatePin extends AppCompatActivity {
-    //final String SAVED_NEW_PIN = "saved_new_pin";
     final String SAVED_PIN = "saved_pin";
     EditText inputNewPin;
     Button btnSaveNewPin;
