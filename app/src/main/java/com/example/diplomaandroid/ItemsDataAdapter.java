@@ -60,22 +60,22 @@ public class ItemsDataAdapter extends BaseAdapter {
         if (view == null) {
             view = inflater.inflate(R.layout.item_list_view, parent, false);
         }
-        Button btnRemove = view.findViewById(R.id.btnRemove);
+       /* Button btnRemove = view.findViewById(R.id.btnRemove);
         btnRemove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 removeItem(position);
             }
-        });
+        });*/
 
         ItemData itemData = items.get(position);
 
 
-        TextView title = view.findViewById(R.id.editTextTitle);
-        TextView subtitle = view.findViewById(R.id.editTextSubtitle);
+       // TextView title = view.findViewById(R.id.editTextTitle);
+        //TextView subtitle = view.findViewById(R.id.editTextSubtitle);
 
-        title.setText((CharSequence) itemData.getTitle());
-        subtitle.setText((CharSequence) itemData.getSubtitle());
+       // title.setText((CharSequence) itemData.getTitle());
+        //subtitle.setText((CharSequence) itemData.getSubtitle());
 
         return view;
     }
