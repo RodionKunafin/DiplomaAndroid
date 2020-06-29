@@ -74,8 +74,8 @@ public class ItemsDataAdapter extends BaseAdapter {
         TextView title = view.findViewById(R.id.editTextTitle);
         TextView subtitle = view.findViewById(R.id.editTextSubtitle);
 
-        title.setText(itemData.getTitle());
-        subtitle.setText(itemData.getSubtitle());
+        title.setText((CharSequence) itemData.getTitle());
+        subtitle.setText((CharSequence) itemData.getSubtitle());
 
         return view;
     }

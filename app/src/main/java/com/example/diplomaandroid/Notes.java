@@ -21,8 +21,8 @@ import java.util.Random;
 
 public class Notes extends AppCompatActivity {
     private ItemsDataAdapter adapter;
-    private List<TextView> records = new ArrayList<>();
-    private Random random = new Random();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,23 +36,18 @@ public class Notes extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // fill();
+                fill();
             }
         });
         adapter = new ItemsDataAdapter(this, null);
         listView.setAdapter(adapter);
 
 
-
-
-
     }
-    /*private void fill(){
+    private void fill() {
         adapter.addItem(new ItemData(
-                records.get(random.nextInt()),"GG"
-                 +adapter.getCount() "",
-                random.nextBoolean()));
-    }*/
+        ));
+    }
 
 
 }

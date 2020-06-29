@@ -1,18 +1,20 @@
 package com.example.diplomaandroid;
 
-public class ItemData {
-    private String title;
-    private String subtitle;
+import android.widget.EditText;
 
-    public ItemData(String title, String subtitle) {
+public class ItemData {
+    private EditText title;
+    private EditText subtitle;
+
+    public ItemData() {
         this.title = title;
         this.subtitle = subtitle;
     }
-    public String getTitle() {
+    public EditText getTitle() {
         return title;
     }
 
-    public String getSubtitle() {
+    public EditText getSubtitle() {
         return subtitle;
     }
 
