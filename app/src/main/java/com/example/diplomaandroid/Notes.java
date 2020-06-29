@@ -1,11 +1,15 @@
 package com.example.diplomaandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 
@@ -48,6 +52,23 @@ public class Notes extends AppCompatActivity {
         adapter.addItem(new ItemData(
         ));
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+
+    }
+    /*@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id==R.id.action_settings){
+            Toast.makeText(Notes.this,"Открыть настройки",Toast.LENGTH_LONG).show();
+            Intent intentSettings = new Intent(android.provider.Settings.ACTION_SETTINGS);
+            startActivity(intentSettings);
+        }
+        return super.onOptionsItemSelected(item);
+    }*/
 
 
 }

@@ -8,3 +8,4 @@
     tools:context=".Notes"
     tools:showIn="@layout/notes"
     tools:listitem="@layout/item_list_view"/>
+
